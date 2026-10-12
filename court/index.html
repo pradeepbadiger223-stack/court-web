@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Internet Court</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-glow glow-one"></div>
+    <div class="page-glow glow-two"></div>
+
+    <header class="topbar container">
+      <a class="brand" href="#top" aria-label="The Internet Court home">
+        <span class="brand-mark">§</span>
+        <span>THE INTERNET<br /><strong>COURT</strong></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#docket">The Docket</a>
+        <a href="#file-case">File a Case</a>
+        <a href="#how-it-works">How It Works</a>
+      </nav>
+      <button class="outline-button" id="openCaseButton">File a case <span>↗</span></button>
+    </header>
+
+    <main id="top">
+      <section class="hero container">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="live-dot"></span> Court is now in session</p>
+          <h1>SETTLE THE <em>DISCOURSE.</em></h1>
+          <p class="hero-text">A public court for the internet's most pressing debates. State your case. Let the jury decide. Accept the verdict.</p>
+          <div class="hero-actions">
+            <button class="primary-button" id="heroCaseButton">Bring a case <span>→</span></button>
+            <a class="text-link" href="#docket">Browse the docket <span>↓</span></a>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="starburst"></div>
+          <div class="gavel gavel-head"></div>
+          <div class="gavel gavel-handle"></div>
+          <div class="sound-block"></div>
+          <span class="motion-line l1"></span><span class="motion-line l2"></span><span class="motion-line l3"></span>
+          <div class="stamp">ORDER<br />IN<br />THE COURT</div>
+        </div>
+      </section>
+
+      <section class="ticker" aria-label="Recent verdicts"><div>✦ VERDICT DELIVERED: PINEAPPLE BELONGS ON PIZZA &nbsp; ✦ &nbsp; THE JURY HAS SPOKEN &nbsp; ✦ &nbsp; NEXT CASE IN 02:14 &nbsp; ✦ &nbsp; VERDICT DELIVERED: PINEAPPLE BELONGS ON PIZZA &nbsp; ✦ &nbsp; THE JURY HAS SPOKEN</div></section>
+
+      <section class="docket-section container" id="docket">
+        <div class="section-heading"><div><p class="eyebrow">Open for deliberation</p><h2>THE <em>DOCKET</em></h2></div><button class="filter-button">All cases <span>⌄</span></button></div>
+        <div class="case-grid" id="caseGrid"></div>
+      </section>
+
+      <section class="how-it-works container" id="how-it-works">
+        <div class="section-heading"><div><p class="eyebrow">Justice, but make it internet</p><h2>HOW IT <em>WORKS</em></h2></div></div>
+        <div class="steps">
+          <article><span>01</span><h3>MAKE YOUR CASE</h3><p>Present the facts, your finest argument, and any deeply held internet opinion.</p></article>
+          <article><span>02</span><h3>FACE THE JURY</h3><p>Real people weigh in. The louder your evidence, the stronger your position.</p></article>
+          <article><span>03</span><h3>ACCEPT THE VERDICT</h3><p>Justice is served. Whether you agree with it is between you and your group chat.</p></article>
+        </div>
+      </section>
+
+      <section class="file-case container" id="file-case">
+        <div class="form-intro"><p class="eyebrow">Your honor, I object</p><h2>FILE A <em>CASE</em></h2><p>Bring your most debatable take. The court will take it from here.</p></div>
+        <form id="caseForm">
+          <label>Case title<input required maxlength="70" id="title" placeholder="e.g. Are voice notes a public nuisance?" /></label>
+          <label>Your position<textarea required maxlength="220" id="argument" placeholder="State your case, counselor…"></textarea></label>
+          <div class="form-row"><label>Category<select id="category"><option>Culture</option><option>Food</option><option>Tech</option><option>Life</option></select></label><label>Opposing view<input id="opponent" placeholder="Optional, but encouraged" /></label></div>
+          <button class="primary-button" type="submit">Submit to the court <span>→</span></button>
+          <p class="form-note">By filing, you agree to respect the jury's extremely serious decision.</p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="container"><span>© 2026 THE INTERNET COURT</span><span>NO APPEALS. ONLY VIBES.</span></footer>
+
+    <dialog id="verdictDialog"><button class="close-dialog" id="closeDialog" aria-label="Close">×</button><p class="eyebrow">The jury has deliberated</p><p class="case-number" id="dialogCaseNumber"></p><h2 id="dialogTitle"></h2><div class="verdict" id="verdictText"></div><p id="verdictReason"></p><button class="primary-button" id="dismissVerdict">Respectfully noted <span>→</span></button></dialog>
+    <script src="script.js"></script>
+  </body>
+</html>
